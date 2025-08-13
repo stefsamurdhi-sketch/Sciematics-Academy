@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sciematics Academy - Home</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <nav class="navbar">
+    <div class="logo">Sciematics Academy</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="syllabuses.html">Syllabuses</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <section class="banner">
+    <h1>Sciematics Academy <br /><span>by Mr. Ravinatha</span></h1>
+    <p>Your trusted Science & Mathematics tutor in Sri Lanka</p>
+  </section>
+</header>
+<main>
+  <section class="intro">
+    <h2>About the Academy & Teacher</h2>
+    <p><strong>Mr. S. Ravinatha</strong> holds a BSc Specialized in Chemistry from the Open University of Sri Lanka. Passionate about teaching Science and Mathematics, he offers personalized coaching tailored to each student’s needs.</p>
+    <p>At Sciematics Academy, we focus on concept clarity, exam strategies, and building confidence for students from Grade 6 up to A Levels.</p>
+  </section>
+  <section class="quick-links">
+    <h2>Explore Our Syllabuses</h2>
+    <div class="cards">
+      <a href="syllabuses.html#local" class="card">
+        <h3>Local Syllabuses (Grades 6-11)</h3>
+        <p>Science & Mathematics in English & Sinhala Medium</p>
+      </a>
+      <a href="syllabuses.html#al" class="card">
+        <h3>Local A/L Syllabus</h3>
+        <p>Biology & Chemistry for Advanced Level Students</p>
+      </a>
+      <a href="syllabuses.html#intl" class="card">
+        <h3>International Syllabuses</h3>
+        <p>Edexcel / London / Cambridge (Grades 6-11, AS & A Levels)</p>
+      </a>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>Contact us: <a href="mailto:stefsamscc@gmail.com">stefsamscc@gmail.com</a> | WhatsApp: <a href="https://wa.me/94729717022" target="_blank">+94 72 971 7022</a></p>
+  <p><a href="https://www.youtube.com/@scienceclub5721" target="_blank">YouTube Channel</a></p>
+  <p>&copy; 2025 Sciematics Academy. All rights reserved.</p>
+</footer>
+<script src="scripts.js"></script>
+</body>
+</html>

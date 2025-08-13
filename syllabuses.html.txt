@@ -1,0 +1,94 @@
+!DOCTYPE html
+html lang=en
+head
+meta charset=UTF-8 
+meta name=viewport content=width=device-width, initial-scale=1 
+titleSciematics Academy - Syllabusestitle
+link rel=stylesheet href=style.css 
+head
+body
+header
+  nav class=navbar
+    div class=logoSciematics Academydiv
+    ul class=nav-links
+      lia href=index.htmlHomeali
+      lia href=syllabuses.html class=activeSyllabusesali
+      lia href=contact.htmlContactali
+    ul
+  nav
+header
+main
+  section class=syllabus-selection
+    h1Select Your Classh1
+    form id=classForm
+      label for=syllabusSyllabuslabel
+      select id=syllabus name=syllabus required
+        option value=-- Select --option
+        option value=localLocal Syllabus (Grades 6-11)option
+        option value=alLocal AL (Biology & Chemistry)option
+        option value=intlInternational (Edexcel  Cambridge)option
+      select
+
+      div id=mediumDiv style=displaynone;
+        label for=mediumMediumlabel
+        select id=medium name=medium
+          option value=-- Select --option
+          option value=englishEnglishoption
+          option value=sinhalaSinhalaoption
+        select
+      div
+
+      label for=timeClass Timelabel
+      select id=time name=time required
+        option value=-- Select --option
+        option value=weekday-eveningWeekday Evening (5 PM - 8 PM)option
+        option value=weekend-morningWeekend Morning (8 AM - 12 PM)option
+        option value=weekend-afternoonWeekend Afternoon (1 PM - 5 PM)option
+      select
+
+      label for=classModeClass Modelabel
+      select id=classMode name=classMode required
+        option value=-- Select --option
+        option value=onlineOnlineoption
+        option value=physicalPhysical (Colombo  Gampaha only)option
+      select
+
+      div id=locationDiv style=displaynone;
+        label for=locationLocation (if Physical)label
+        select id=location name=location
+          option value=-- Select --option
+          option value=colomboColombooption
+          option value=gampahaGampahaoption
+          option value=otherOther (Not eligible for Physical)option
+        select
+      div
+
+      div class=fee-display
+        pClass Fee per hour span id=feeAmount-spanp
+      div
+
+      button type=button id=proceedPaymentBtn disabledProceed to Paymentbutton
+    form
+
+    section id=paymentSection style=displaynone;
+      h2Payment Detailsh2
+      pPlease transfer the fee to the following bank accountp
+      ul
+        listrongBank Namestrong National Bank of Sri Lankali
+        listrongAccount Numberstrong 123-456-789li
+        listrongBranchstrong Colomboli
+        listrongAccount Holderstrong S. Ravinathali
+      ul
+      button id=onlinePaymentBtnOnline Transferbutton
+      pAfter payment, please send payment confirmation via WhatsApp or Email.p
+    section
+  section
+main
+footer
+  pContact us a href=mailtostefsamscc@gmail.comstefsamscc@gmail.coma  WhatsApp a href=httpswa.me94729717022 target=_blank+94 72 971 7022ap
+  pa href=httpswww.youtube.com@scienceclub5721 target=_blankYouTube Channelap
+  p&copy; 2025 Sciematics Academy. All rights reserved.p
+footer
+script src=scripts.jsscript
+body
+html

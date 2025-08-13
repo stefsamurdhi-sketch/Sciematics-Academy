@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sciematics Academy - Contact</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <nav class="navbar">
+    <div class="logo">Sciematics Academy</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="syllabuses.html">Syllabuses</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="contact-section">
+    <h1>Contact Us</h1>
+    <p>Email: <a href="mailto:stefsamscc@gmail.com">stefsamscc@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/94729717022" target="_blank">+94 72 971 7022</a></p>
+    <p>YouTube Channel: <a href="https://www.youtube.com/@scienceclub5721" target="_blank">Sciematics Academy</a></p>
+    <form id="contactForm">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required /><br />
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br />
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="5" required></textarea><br />
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+</main>
+<footer>
+  <p>Contact us: <a href="mailto:stefsamscc@gmail.com">stefsamscc@gmail.com</a> | WhatsApp: <a href="https://wa.me/94729717022" target="_blank">+94 72 971 7022</a></p>
+  <p><a href="https://www.youtube.com/@scienceclub5721" target="_blank">YouTube Channel</a></p>
+  <p>&copy; 2025 Sciematics Academy. All rights reserved.</p>
+</footer>
+<script src="scripts.js"></script>
+</body>
+</html>

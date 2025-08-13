@@ -1,0 +1,115 @@
+// Show medium only for local syllabuses
+const syllabusSelect = document.getElementById('syllabus');
+const mediumDiv = document.getElementById('mediumDiv');
+const mediumSelect = document.getElementById('medium');
+const classModeSelect = document.getElementById('classMode');
+const locationDiv = document.getElementById('locationDiv');
+const locationSelect = document.getElementById('location');
+const feeAmount = document.getElementById('feeAmount');
+const proceedBtn = document.getElementById('proceedPaymentBtn');
+const paymentSection = document.getElementById('paymentSection');
+const onlinePaymentBtn = document.getElementById('onlinePaymentBtn');
+
+if (syllabusSelect) {
+  syllabusSelect.addEventListener('change', () => {
+    if (syllabusSelect.value === 'local' || syllabusSelect.value === 'al') {
+      mediumDiv.style.display = 'block';
+      mediumSelect.required = true;
+    } else {
+      mediumDiv.style.display = 'none';
+      mediumSelect.required = false;
+      mediumSelect.value = '';
+    }
+    updateFee();
+    checkFormComplete();
+  });
+}
+
+if (classModeSelect) {
+  classModeSelect.addEventListener('change', () => {
+    if (classModeSelect.value === 'physical') {
+      locationDiv.style.display = 'block';
+      locationSelect.required = true;
+    } else {
+      locationDiv.style.display = 'none';
+      locationSelect.required = false;
+      locationSelect.value = '';
+    }
+    updateFee();
+    checkFormComplete();
+  });
+}
+
+if (mediumSelect) mediumSelect.addEventListener('change', () => { updateFee(); checkFormComplete(); });
+if (locationSelect) locationSelect.addEventListener('change', () => { updateFee(); checkFormComplete(); });
+if (document.getElementById('time')) document.getElementById('time').addEventListener('change', () => { checkFormComplete(); });
+
+function updateFee() {
+  let syllabus = syllabusSelect.value;
+  let classMode = classModeSelect.value;
+  let location = locationSelect.value;
+
+  // Placeholder fees — update as needed
+  const fees = {
+    local: { online: 1500, physical: 2000 },
+    al: { online: 2500, physical: 3000 },
+    intl: { online: 15, physical: 20 } // USD for intl, physical assumed 20 USD placeholder
+  };
+
+  // Disable Physical option if location is "other"
+  if (classMode === 'physical' && location === 'other') {
+    feeAmount.textContent = 'Physical classes not available in this area';
+    proceedBtn.disabled = true;
+    return;
+  }
+
+  if (!syllabus || !classMode) {
+    feeAmount.textContent = '-';
+    proceedBtn.disabled = true;
+    return;
+  }
+
+  let fee;
+  if (syllabus === 'intl') {
+    fee = fees.intl[classMode] + ' USD/hr';
+  } else {
+    fee = 'Rs. ' + fees[syllabus][classMode] + '/hr';
+  }
+  feeAmount.textContent = fee;
+  proceedBtn.disabled = false;
+}
+
+function checkFormComplete() {
+  const syllabus = syllabusSelect.value;
+  const medium = mediumSelect.value;
+  const time = document.getElementById('time').value;
+  const classMode = classModeSelect.value;
+  const location = locationSelect.value;
+
+  // Validate physical class location
+  if (classMode === 'physical' && location === 'other') {
+    proceedBtn.disabled = true;
+    return;
+  }
+
+  if (!syllabus || ( (syllabus === 'local' || syllabus === 'al') && !medium ) || !time || !classMode || (classMode === 'physical' && !location)) {
+    proceedBtn.disabled = true;
+  } else {
+    proceedBtn.disabled = false;
+  }
+}
+
+// Show payment details on clicking proceed
+if (proceedBtn) {
+  proceedBtn.addEventListener('click', () => {
+    paymentSection.style.display = 'block';
+    paymentSection.scrollIntoView({behavior: 'smooth'});
+  });
+}
+
+// Online payment button (you can change the link below to your actual payment URL)
+if (onlinePaymentBtn) {
+  onlinePaymentBtn.addEventListener('click', () => {
+    window.open('https://your-payment-link.com', '_blank');
+  });
+}
